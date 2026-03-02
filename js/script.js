@@ -43,6 +43,9 @@
       else openMenu();
     });
 
+    var closeBtn = nav.querySelector('.nav-close-btn');
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
     nav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', closeMenu);
     });

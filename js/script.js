@@ -103,16 +103,13 @@
   var revealSelectors = [
     '.benefit-card',
     '.way-card',
-    '.reality-box',
-    '.reality-card',
-    '.reality-involve',
-    '.incentive-box',
+    '.reality-content',
+    '.reality-problem-box',
     '.capacity-card',
     '.feature-card',
     '.two-col-content',
     '.hero-content',
     '.hero-visual',
-    '.incentive-callout',
     '.section-title',
     '.section-divider-inner'
   ];

@@ -1,0 +1,412 @@
+<!--
+  ARCHIVED: Strategic Incentive Model section
+  ==========================================
+  Tento soubor obsahuje kompletní kód sekce "Strategic Incentive Model"
+  (HTML, CSS pro desktop/tablet/mobil, JS pro reveal-on-scroll).
+  Kdykoli bude potřeba sekci znovu přidat na web:
+  1. Do index.html: přidat odkaz v navigaci (viz níže) a celou <section> před sekci Enterprise-Ready.
+  2. Do css/styles.css: přidat CSS proměnné, blok "/* ----- Incentive ----- */" a responzivní bloky z tohoto souboru.
+  3. Do js/script.js: do pole revealSelectors přidat '.incentive-box' a '.incentive-callout'.
+-->
+
+<!-- ========== 1. NAVIGACE (index.html): přidat mezi ostatní <a> v .nav ========== -->
+<!--
+          <a href="#incentive">Incentive Model</a>
+-->
+
+<!-- ========== 2. HTML SEKCE (index.html): vložit před <!-- Enterprise-Ready --> ========== -->
+<!-- Strategic Incentive -->
+<section id="incentive" class="section section--incentive incentive-section">
+  <div class="container incentive-container">
+    <h2 class="section-title incentive-section-title">Strategic <span class="text-primary">Incentive</span> Model</h2>
+    <div class="incentive-callout">
+      <p class="incentive-callout-text">For every <strong class="incentive-amount"><span class="incentive-amount-value">€50,000</span></strong> invested in <strong>DataSentics</strong> consulting services, you receive <strong class="incentive-amount"><span class="incentive-amount-value">€25,000</span></strong> in <strong>BW Migrator</strong> usage credits.</p>
+    </div>
+    <div class="incentive-boxes">
+      <article class="incentive-box">
+        <span class="incentive-box-num" aria-hidden="true">1</span>
+        <p class="incentive-box-text">Combine automation with expert support</p>
+      </article>
+      <article class="incentive-box">
+        <span class="incentive-box-num" aria-hidden="true">2</span>
+        <p class="incentive-box-text">Increase project velocity</p>
+      </article>
+      <article class="incentive-box">
+        <span class="incentive-box-num" aria-hidden="true">3</span>
+        <p class="incentive-box-text">Reduce ramp-up risk</p>
+      </article>
+      <article class="incentive-box">
+        <span class="incentive-box-num" aria-hidden="true">4</span>
+        <p class="incentive-box-text">Scale migration capacity intelligently</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. CSS – proměnné (styles.css :root) ========== -->
+<!-- Přidat do :root mezi ostatní --color-* a --color-bg-* -->
+/*
+  --color-incentive-callout-bg: #2B314B;
+  --color-bg-incentive: #EEF4FC;
+*/
+
+<!-- ========== 4. CSS – základní blok (styles.css) ========== -->
+<style>
+/* ----- Incentive ----- */
+.incentive-section {
+  position: relative;
+  padding-top: var(--section-padding-y-lg);
+  padding-bottom: var(--section-padding-y-lg);
+}
+
+.incentive-container {
+  position: relative;
+  z-index: 1;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.incentive-section-title {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-2xl);
+}
+
+/* Callout: light blue accent box — modern, elevated, no overlays */
+.incentive-callout {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-2xl) var(--space-xl);
+  border-radius: 24px;
+  margin-bottom: var(--space-2xl);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+  box-shadow: 0 8px 32px rgba(55, 124, 243, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+  background: linear-gradient(145deg, #E8F0FE 0%, var(--color-bg-incentive) 50%, #D6E4FC 100%);
+  border: 1px solid rgba(55, 124, 243, 0.25);
+}
+
+.incentive-callout:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(55, 124, 243, 0.18), 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: rgba(55, 124, 243, 0.4);
+}
+
+.incentive-callout:focus-within {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.incentive-callout-text {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  line-height: 1.65;
+  max-width: 34em;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+}
+
+/* Euro amounts — clear, on light blue */
+.incentive-amount {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--color-primary);
+}
+
+.incentive-amount-value {
+  display: inline-block;
+  font-size: 1.625rem;
+  padding: 0.2em 0.4em;
+  margin: 0 0.05em;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-primary);
+  border-radius: 10px;
+  border: 1px solid rgba(55, 124, 243, 0.3);
+  box-shadow: 0 2px 12px rgba(55, 124, 243, 0.12);
+  transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.incentive-callout:hover .incentive-amount-value {
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(55, 124, 243, 0.2);
+  transform: scale(1.02);
+}
+
+/* Incentive section: "Incentive" in blue */
+#incentive .section-title .text-primary {
+  color: var(--color-primary);
+}
+
+/* Section background — solid light blue, no spots or decorative elements */
+.section--incentive {
+  background: var(--color-bg-incentive);
+}
+
+.incentive-boxes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+.incentive-box {
+  background: #fff;
+  padding: var(--space-xl) var(--space-2xl);
+  border-radius: 16px;
+  border: 1px solid rgba(55, 124, 243, 0.12);
+  text-align: center;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease, border-color 0.25s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.incentive-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(55, 124, 243, 0.1), 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-color: rgba(55, 124, 243, 0.25);
+}
+
+.incentive-box:focus-within {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Icon or number (1–4) */
+.incentive-box-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto var(--space-md);
+  color: var(--color-primary);
+  transition: transform 0.35s ease;
+}
+
+.incentive-box-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  margin: 0 auto var(--space-md);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  line-height: 1;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: transform 0.35s ease, background 0.25s ease;
+}
+
+.incentive-box:hover .incentive-box-icon {
+  transform: scale(1.08);
+}
+
+.incentive-box:hover .incentive-box-num {
+  transform: scale(1.08);
+  background: var(--color-primary-hover);
+}
+
+.incentive-box-icon svg {
+  display: block;
+  width: var(--icon-size-card);
+  height: var(--icon-size-card);
+}
+
+.incentive-box-text {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  font-weight: 500;
+}
+</style>
+
+<!-- ========== 5. CSS – Mobile (max-width: 767px) ========== -->
+<!-- V rámci existujícího @media (max-width: 767px) přidat/obnovit:
+     - do seznamu font-size (body, p, .capacity-intro, ...): .incentive-box-text, .incentive-callout-text
+     - do seznamu h2, h3, .section-title, ...: .incentive-section-title
+     - do skupiny .capacity-cards, .reality-cards, .features-grid: .incentive-boxes
+     - do skupiny .capacity-card, .reality-card, .feature-card: .incentive-box
+     - do skupiny .capacity-card-icon, .reality-card-icon, .feature-card-icon: .incentive-box-icon
+     - samostatné pravidlo: .incentive-box-icon, .incentive-box-num { ... }
+     - .incentive-box-num { margin: 0; display: flex; ... }
+     - do skupiny .capacity-card-icon svg, ...: .incentive-box-icon svg
+     - do skupiny .capacity-card-text, .reality-card-text, ...: .incentive-box-text
+-->
+<style>
+@media (max-width: 767px) {
+  .incentive-box-text,
+  .incentive-callout-text {
+    font-size: var(--text-mobile-body);
+  }
+
+  .incentive-section-title {
+    font-size: var(--heading-mobile);
+  }
+
+  .incentive-boxes {
+    gap: var(--listing-box-gap-between-mobile);
+    width: 100%;
+  }
+
+  .incentive-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--listing-box-gap-mobile);
+    background: var(--color-bg);
+    border: 1px solid var(--listing-box-border-mobile);
+    border-radius: var(--listing-box-radius-mobile);
+    padding: var(--listing-box-padding-y-mobile) var(--listing-box-padding-x-mobile);
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    min-height: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .incentive-box-icon {
+    margin: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    width: 1.25rem;
+    min-width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .incentive-box-icon,
+  .incentive-box-num {
+    width: 1.5rem;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    min-height: 1.5rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
+  .incentive-box-num {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding: 0;
+  }
+
+  .incentive-box-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+  }
+
+  .incentive-box-text {
+    font-size: var(--text-mobile-body);
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--color-text);
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+}
+</style>
+
+<!-- ========== 6. CSS – Tablet (max-width: 1023px) ========== -->
+<style>
+@media (max-width: 1023px) {
+  .incentive-boxes {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .incentive-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    text-align: left;
+    border-radius: 12px;
+    border: 1px solid var(--color-primary-40);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .incentive-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-primary);
+  }
+
+  .incentive-box-icon,
+  .incentive-box-num {
+    width: auto;
+    height: auto;
+    min-width: 2rem;
+    min-height: 2rem;
+    margin: 0;
+    flex-shrink: 0;
+    font-size: 0.875rem;
+  }
+
+  .incentive-box-num {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  .incentive-box-icon svg {
+    width: var(--icon-size-card);
+    height: var(--icon-size-card);
+  }
+
+  .incentive-box-text {
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+  }
+}
+</style>
+
+<!-- ========== 7. CSS – Desktop (min-width: 1024px) ========== -->
+<style>
+@media (min-width: 1024px) {
+  .incentive-section-title {
+    font-size: 2.5rem;
+  }
+
+  .incentive-boxes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+</style>
+
+<!-- ========== 8. JavaScript (js/script.js) ========== -->
+<!-- Do pole revealSelectors přidat tyto dva řetězce: -->
+<!--   '.incentive-box', -->
+<!--   '.incentive-callout', -->

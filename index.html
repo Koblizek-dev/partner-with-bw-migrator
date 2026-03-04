@@ -72,7 +72,6 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="header-top-bar" aria-hidden="true"></div>
     <div class="header-inner">
       <a href="#" class="logo" aria-label="BW Migrator – Partner program (current page)">
         <img src="images/logo.png" alt="BW Migrator" class="logo-img" width="64" height="64" />
@@ -95,7 +94,6 @@
           <a href="#reality">The Problem</a>
           <a href="#what-it-does">What It Does</a>
           <a href="#ways-to-work">Pricing</a>
-          <a href="#incentive">Incentive Model</a>
           <div class="nav-ctas">
             <a href="#contact" class="btn btn-primary">Contact Us</a>
           </div>
@@ -153,63 +151,45 @@
     <!-- The Reality -->
     <section id="reality" class="section section--alt">
       <div class="container">
-        <h2 class="reality-title">The Reality of <span class="reality-title-highlight">SAP BW Migrations</span></h2>
-        <p class="reality-subtitle">You know modern data platforms. But SAP BW migrations are different.</p>
+        <h2 class="section-title reality-title">The Reality of <span class="reality-title-highlight">SAP BW Migrations</span></h2>
+        <p class="reality-intro">You know modern data platforms. But SAP BW migrations are different.</p>
 
-        <div class="reality-involve">
-          <div class="reality-involve-bg" aria-hidden="true">
-            <span class="reality-involve-shape reality-involve-shape--1"></span>
-            <span class="reality-involve-shape reality-involve-shape--2"></span>
-            <span class="reality-involve-shape reality-involve-shape--3"></span>
+        <div class="reality-grid">
+          <div class="reality-content">
+            <div class="reality-involve-box">
+              <h3 class="reality-content-heading">What they involve:</h3>
+              <ul class="reality-involve-list">
+                <li>Thousands of legacy objects</li>
+                <li>Hidden ABAP routines</li>
+                <li>Decades of accumulated logic</li>
+                <li>Interconnected transformations</li>
+                <li>Business rules buried in code</li>
+              </ul>
+            </div>
           </div>
-          <p class="reality-involve-heading">They involve:</p>
-          <div class="reality-cards">
-            <article class="reality-card">
-              <span class="reality-card-icon" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="8" height="12" rx="1"/><rect x="14" y="6" width="8" height="12" rx="1"/><path d="M6 12h2M16 12h2"/></svg>
-              </span>
-              <p class="reality-card-text">Thousands of legacy objects</p>
-            </article>
-            <article class="reality-card">
-              <span class="reality-card-icon" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg>
-              </span>
-              <p class="reality-card-text">Hidden ABAP routines</p>
-            </article>
-            <article class="reality-card">
-              <span class="reality-card-icon" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              </span>
-              <p class="reality-card-text">20 years of accumulated logic</p>
-            </article>
-            <article class="reality-card">
-              <span class="reality-card-icon" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83M19.07 4.93l-2.83 2.83M7.76 16.24l-2.83 2.83"/><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/></svg>
-              </span>
-              <p class="reality-card-text">Interconnected transformations</p>
-            </article>
-            <article class="reality-card">
-              <span class="reality-card-icon" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18h6M16 12h6M10 6H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1z"/><path d="M14 6V4a1 1 0 0 0-1-1h-2"/></svg>
-              </span>
-              <p class="reality-card-text">Business rules buried in code</p>
-            </article>
+          <div class="reality-problems-visual" aria-label="Three main problems: cost, speed, risk">
+            <div class="reality-problem-box">
+              <span class="reality-problem-box-icon" aria-hidden="true">×</span>
+              <div class="reality-problem-box-inner">
+                <span class="reality-problem-box-label">Cost</span>
+                <p class="reality-problem-box-text">Hiring large ABAP teams is expensive.</p>
+              </div>
+            </div>
+            <div class="reality-problem-box">
+              <span class="reality-problem-box-icon" aria-hidden="true">×</span>
+              <div class="reality-problem-box-inner">
+                <span class="reality-problem-box-label">Speed</span>
+                <p class="reality-problem-box-text">Manual analysis is slow.</p>
+              </div>
+            </div>
+            <div class="reality-problem-box">
+              <span class="reality-problem-box-icon" aria-hidden="true">×</span>
+              <div class="reality-problem-box-inner">
+                <span class="reality-problem-box-label">Risk</span>
+                <p class="reality-problem-box-text">Estimations are uncertain.</p>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="reality-row">
-          <article class="reality-box reality-box--problem">
-            <span class="reality-box-header">COST</span>
-            <p><span class="reality-box-problem-icon" aria-hidden="true">×</span> Hiring large ABAP teams is expensive.</p>
-          </article>
-          <article class="reality-box reality-box--problem">
-            <span class="reality-box-header">SPEED</span>
-            <p><span class="reality-box-problem-icon" aria-hidden="true">×</span> Manual analysis is slow.</p>
-          </article>
-          <article class="reality-box reality-box--problem">
-            <span class="reality-box-header">RISK</span>
-            <p><span class="reality-box-problem-icon" aria-hidden="true">×</span> Estimations are uncertain.</p>
-          </article>
         </div>
 
         <p class="reality-statement">This is exactly the problem <span class="reality-statement-bold">BW Migrator</span> <span class="reality-statement-underline">solves</span>.</p>
@@ -329,6 +309,7 @@
         <p class="section-subtitle">Simple model. No complexity.</p>
         <div class="ways-cards">
           <article class="way-card way-card--saas">
+            <span class="way-card-badge" aria-hidden="true">POPULAR</span>
             <span class="way-card-option-tag" aria-hidden="true">OPTION 1</span>
             <div class="way-card-header">
               <span class="way-card-icon-wrap" aria-hidden="true">
@@ -359,7 +340,6 @@
             <p class="way-tagline way-tagline--orange">Start small. Scale per project.</p>
           </article>
           <article class="way-card way-card--license">
-            <span class="way-card-badge" aria-hidden="true">POPULAR</span>
             <span class="way-card-option-tag" aria-hidden="true">OPTION 2</span>
             <div class="way-card-header">
               <span class="way-card-icon-wrap" aria-hidden="true">
@@ -426,40 +406,12 @@
             <span class="capacity-card-text">Acceleration during critical phases</span>
           </article>
         </div>
-        <p class="capacity-outro">We built the tool because we run migrations ourselves. If you want support on specific parts of a project, you can engage our team. If you don't, you run it yourself.</p>
+        <p class="capacity-outro"><strong>With more than 300 Data &amp; AI experts</strong>, we can help you scale when you need it. We built the tool because we run migrations ourselves. If you want support on specific parts of a project, you can engage our team. If you don't, you run it yourself.</p>
         <div class="capacity-tags">
           <span class="capacity-tag">Your project.</span>
           <span class="capacity-tag">Your client.</span>
           <span class="capacity-tag">Your lead.</span>
         </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Strategic Incentive -->
-    <section id="incentive" class="section section--incentive incentive-section">
-      <div class="container incentive-container">
-        <h2 class="section-title incentive-section-title">Strategic <span class="text-primary">Incentive</span> Model</h2>
-        <div class="incentive-callout">
-          <p class="incentive-callout-text">For every <strong class="incentive-amount"><span class="incentive-amount-value">€50,000</span></strong> invested in <strong>DataSentics</strong> consulting services, you receive <strong class="incentive-amount"><span class="incentive-amount-value">€25,000</span></strong> in <strong>BW Migrator</strong> usage credits.</p>
-        </div>
-        <div class="incentive-boxes">
-          <article class="incentive-box">
-            <span class="incentive-box-num" aria-hidden="true">1</span>
-            <p class="incentive-box-text">Combine automation with expert support</p>
-          </article>
-          <article class="incentive-box">
-            <span class="incentive-box-num" aria-hidden="true">2</span>
-            <p class="incentive-box-text">Increase project velocity</p>
-          </article>
-          <article class="incentive-box">
-            <span class="incentive-box-num" aria-hidden="true">3</span>
-            <p class="incentive-box-text">Reduce ramp-up risk</p>
-          </article>
-          <article class="incentive-box">
-            <span class="incentive-box-num" aria-hidden="true">4</span>
-            <p class="incentive-box-text">Scale migration capacity intelligently</p>
-          </article>
         </div>
       </div>
     </section>
@@ -515,7 +467,7 @@
         </div>
         <p class="contact-statement">BW Migrator makes your life easier.</p>
         <div class="contact-ctas">
-          <a href="mailto:robert.mihok@datasentics.com?subject=Partner%20inquiry%20-%20BW%20Migrator" class="btn btn-contact btn-contact--primary">Schedule a Partner Discussion<span class="btn-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a>
+          <a href="https://calendly.com/robert-mihok/30min" target="_blank" rel="noopener noreferrer" class="btn btn-contact btn-contact--primary">Schedule a Partner Discussion<span class="btn-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a>
           <a href="mailto:robert.mihok@datasentics.com?subject=Partner%20inquiry%20-%20BW%20Migrator" class="btn btn-contact btn-contact--secondary"><span class="btn-icon btn-icon--left" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>Request More Information</a>
         </div>
       </div>

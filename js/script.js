@@ -109,7 +109,6 @@
     '.feature-card',
     '.two-col-content',
     '.hero-content',
-    '.hero-visual',
     '.section-title',
     '.section-divider-inner'
   ];

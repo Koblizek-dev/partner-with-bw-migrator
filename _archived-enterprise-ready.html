@@ -1,0 +1,129 @@
+<!--
+  ARCHIVED: Enterprise-Ready section (with image)
+  ==============================================
+  Tento soubor obsahuje kompletní kód sekce "Enterprise-Ready" včetně obrázku
+  a souvisejících CSS pravidel (desktop/tablet/mobil).
+
+  Kdykoli bude potřeba obrázek a dvousloupcový layout vrátit:
+  1) Do index.html: vrať <div class="enterprise-visual">...</div> (viz HTML níže)
+     před <div class="enterprise-content"> uvnitř sekce #enterprise.
+  2) Do css/styles.css: vrať CSS bloky níže (Enterprise section: image + content side by side
+     + enterprise-visual-*, včetně media queries).
+  3) Obrázek: images/enterprise-ready.png (pokud by byl někdy odstraněn, vrať ho zpět).
+-->
+
+<!-- =========================
+     HTML (původní verze)
+     ========================= -->
+<section id="enterprise" class="section section--warm">
+  <div class="container enterprise-section-inner">
+    <div class="enterprise-visual" aria-hidden="true">
+      <img src="images/enterprise-ready.png" alt="" class="enterprise-visual-img" width="800" height="600" />
+    </div>
+    <div class="enterprise-content">
+      <p class="enterprise-tag">
+        <span class="enterprise-tag-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        Secure
+      </p>
+      <h2 class="section-title enterprise-title">Enterprise-Ready</h2>
+      <div class="enterprise-list-wrap">
+        <ul class="bullet-list bullet-list--check bullet-list--blue">
+          <li>Secure Azure hosting</li>
+          <li>Metadata-only processing</li>
+          <li>No business data stored</li>
+          <li>Dedicated environments available</li>
+          <li>Designed for large enterprise landscapes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     CSS (původní verze)
+     ========================= -->
+/* Enterprise section: image + content side by side */
+.enterprise-section-inner {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .enterprise-section-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .enterprise-section-inner .enterprise-visual {
+    order: 0;
+  }
+  .enterprise-section-inner .enterprise-content {
+    order: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .enterprise-content .section-title.enterprise-title {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .enterprise-content .enterprise-tag {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .enterprise-content .enterprise-list-wrap {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .enterprise-section-inner .enterprise-visual {
+    order: 0;
+  }
+  .enterprise-section-inner .enterprise-content {
+    order: 1;
+  }
+}
+
+.enterprise-visual-placeholder,
+.enterprise-visual-img {
+  aspect-ratio: 4/3;
+  min-height: 14rem;
+  max-height: 20rem;
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+.enterprise-visual-placeholder {
+  background: linear-gradient(145deg, #e8eef7 0%, #c5d4eb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  opacity: 0.9;
+}
+.enterprise-visual-img {
+  object-fit: cover;
+}
+
+/* Mobile/tablet adjustments */
+@media (max-width: 767px) {
+  .enterprise-section-inner {
+    gap: 1rem;
+  }
+
+  .enterprise-list-wrap {
+    padding: 1rem 1.25rem;
+  }
+
+  .enterprise-title {
+    margin-bottom: 0.75rem;
+  }
+
+  .enterprise-content .enterprise-tag {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
